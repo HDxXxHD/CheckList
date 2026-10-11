@@ -1,0 +1,34 @@
+/* =========================================================
+   Print / PDF — گزارش‌ها و جزئیات معامله
+   ========================================================= */
+@page { size: A4; margin: 12mm; }
+
+html, html.dark {
+  --bg: #fff; --surface: #fff; --surface-2: #f9fafb; --border: #e4e7ec; --border-soft: #f2f4f7;
+  --text: #344054; --text-strong: #101828; --muted: #667085;
+}
+
+body { background: #fff; font-size: 12px; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+.sidebar, .header, .sidebar-backdrop, .toast-root, #modal-root,
+.no-print, .row-actions, .wizard-footer, .btn { display: none !important; }
+
+.main, html.sidebar-collapsed .main { margin: 0 !important; }
+.page { padding: 0; max-width: none; }
+.view { gap: 14px; animation: none; }
+.grid, .stack { gap: 14px; }
+
+.print-only { display: block; }
+.print-head { border-bottom: 2px solid #465fff; padding-bottom: 8px; }
+.print-head h1 { font-size: 18px; }
+.print-head p { color: #667085; }
+
+.card { break-inside: avoid; box-shadow: none !important; }
+.kpi-grid { grid-template-columns: repeat(4, 1fr) !important; }
+.grid-12 > .col-8 { grid-column: span 8 !important; }
+.grid-12 > .col-4 { grid-column: span 4 !important; }
+.grid-12 > .col-6 { grid-column: span 6 !important; }
+.grid-3 { grid-template-columns: repeat(2, 1fr) !important; }
+.grid-2 { grid-template-columns: repeat(2, 1fr) !important; }
+.hide-md, .hide-sm { display: table-cell !important; }
+.table-wrap { overflow: visible; }

@@ -1,0 +1,159 @@
+/* =========================================================
+   Base: design tokens, reset, typography
+   پالت رنگی الهام‌گرفته از TailAdmin
+   ========================================================= */
+:root {
+  --brand-25: #f2f7ff;
+  --brand-50: #ecf3ff;
+  --brand-100: #dde9ff;
+  --brand-200: #c2d6ff;
+  --brand-300: #9cb9ff;
+  --brand-400: #7592ff;
+  --brand-500: #465fff;
+  --brand-600: #3641f5;
+  --brand-700: #2a31d8;
+
+  --success-50: #ecfdf3;
+  --success-500: #12b76a;
+  --success-600: #039855;
+  --success-700: #027a48;
+  --error-50: #fef3f2;
+  --error-500: #f04438;
+  --error-600: #d92d20;
+  --error-700: #b42318;
+  --warning-50: #fffaeb;
+  --warning-500: #f79009;
+  --warning-600: #dc6803;
+  --warning-700: #b54708;
+  --purple-50: #f4f3ff;
+  --purple-500: #7a5af8;
+
+  --gray-25: #fcfcfd;
+  --gray-50: #f9fafb;
+  --gray-100: #f2f4f7;
+  --gray-200: #e4e7ec;
+  --gray-300: #d0d5dd;
+  --gray-400: #98a2b3;
+  --gray-500: #667085;
+  --gray-600: #475467;
+  --gray-700: #344054;
+  --gray-800: #1d2939;
+  --gray-900: #101828;
+
+  --bg: var(--gray-50);
+  --surface: #ffffff;
+  --surface-2: var(--gray-50);
+  --surface-hover: var(--gray-100);
+  --border: var(--gray-200);
+  --border-soft: var(--gray-100);
+  --text: var(--gray-700);
+  --text-strong: var(--gray-900);
+  --muted: var(--gray-500);
+  --subtle: var(--gray-400);
+
+  --tint-brand: var(--brand-50);
+  --tint-success: var(--success-50);
+  --tint-error: var(--error-50);
+  --tint-warning: var(--warning-50);
+  --tint-purple: var(--purple-50);
+  --tint-gray: var(--gray-100);
+
+  --on-success: var(--success-700);
+  --on-error: var(--error-700);
+  --on-warning: var(--warning-700);
+  --on-brand: var(--brand-600);
+
+  --shadow-xs: 0 1px 2px rgba(16, 24, 40, .05);
+  --shadow-md: 0 12px 16px -4px rgba(16, 24, 40, .08), 0 4px 6px -2px rgba(16, 24, 40, .03);
+  --shadow-focus: 0 0 0 4px rgba(70, 95, 255, .12);
+
+  --radius-lg: 16px;
+  --radius: 12px;
+  --radius-sm: 8px;
+  --sidebar-w: 290px;
+  --sidebar-w-collapsed: 90px;
+  --header-h: 76px;
+  --font: 'Vazirmatn', 'Vazir', Tahoma, 'Segoe UI', sans-serif;
+  --ease: cubic-bezier(.2, .8, .2, 1);
+
+  color-scheme: light;
+}
+
+html.dark {
+  --bg: #0c111d;
+  --surface: #151c2c;
+  --surface-2: #1a2235;
+  --surface-hover: #1f2940;
+  --border: #253048;
+  --border-soft: #1e2739;
+  --text: #cfd4dc;
+  --text-strong: #f2f4f7;
+  --muted: #98a2b3;
+  --subtle: #667085;
+
+  --tint-brand: rgba(70, 95, 255, .14);
+  --tint-success: rgba(18, 183, 106, .13);
+  --tint-error: rgba(240, 68, 56, .13);
+  --tint-warning: rgba(247, 144, 9, .13);
+  --tint-purple: rgba(122, 90, 248, .14);
+  --tint-gray: rgba(152, 162, 179, .12);
+
+  --on-success: #32d583;
+  --on-error: #f97066;
+  --on-warning: #fdb022;
+  --on-brand: #9cb9ff;
+
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, .3);
+  --shadow-md: 0 12px 24px -6px rgba(0, 0, 0, .45);
+  color-scheme: dark;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  font-family: var(--font);
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--text);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  transition: background .2s;
+}
+
+h1, h2, h3, h4 { margin: 0; color: var(--text-strong); font-weight: 700; line-height: 1.4; }
+p { margin: 0; }
+a { color: var(--brand-500); text-decoration: none; }
+button, input, select, textarea { font: inherit; color: inherit; }
+button { cursor: pointer; }
+img, svg { display: block; }
+ul, ol { margin: 0; padding: 0; list-style: none; }
+[hidden] { display: none !important; }
+
+.icon { width: 20px; height: 20px; flex-shrink: 0; }
+
+::selection { background: var(--brand-100); color: var(--brand-700); }
+
+:focus-visible { outline: 2px solid var(--brand-500); outline-offset: 2px; }
+
+/* اسکرول‌بار */
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 8px; }
+::-webkit-scrollbar-track { background: transparent; }
+
+/* utilities */
+.ltr { direction: ltr; unicode-bidi: isolate; }
+.ltr-cell { direction: ltr; text-align: right; }
+.text-success { color: var(--on-success) !important; }
+.text-error { color: var(--on-error) !important; }
+.text-warning { color: var(--on-warning) !important; }
+.text-muted { color: var(--muted); }
+.d-block { display: block; }
+.nowrap { white-space: nowrap; }
+.num { font-variant-numeric: tabular-nums; white-space: nowrap; direction: ltr; unicode-bidi: isolate; display: inline-block; }
+.mr-auto { margin-inline-start: auto; }
+.print-only { display: none; }
+.w-40 { width: 34%; }
+.w-30 { width: 26%; }

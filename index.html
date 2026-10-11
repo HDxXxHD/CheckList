@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>چک‌لیست معاملات | پنل مدیریت</title>
+  <link rel="icon" href="assets/img/logo.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" />
+
+  <link rel="stylesheet" href="assets/css/base.css" />
+  <link rel="stylesheet" href="assets/css/layout.css" />
+  <link rel="stylesheet" href="assets/css/components.css" />
+  <link rel="stylesheet" href="assets/css/pages.css" />
+  <link rel="stylesheet" href="assets/css/print.css" media="print" />
+
+  <script>
+    // اعمال تم قبل از رندر برای جلوگیری از چشمک‌زدن صفحه
+    (function () {
+      try {
+        var s = JSON.parse(localStorage.getItem('checklist.settings.v1') || '{}');
+        var t = s.theme || 'system';
+        var dark = t === 'dark' || (t === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+        if (dark) document.documentElement.classList.add('dark');
+        if (localStorage.getItem('checklist.sidebar') === 'collapsed') document.documentElement.classList.add('sidebar-collapsed');
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+  <div class="layout">
+    <aside id="sidebar" class="sidebar" aria-label="منوی اصلی"></aside>
+    <div id="backdrop" class="sidebar-backdrop"></div>
+
+    <div class="main">
+      <header id="header" class="header"></header>
+      <main id="page" class="page" tabindex="-1"></main>
+    </div>
+  </div>
+
+  <div id="modal-root"></div>
+  <div id="toast-root" class="toast-root"></div>
+
+  <!-- core -->
+  <script src="src/core/utils.js"></script>
+  <script src="src/core/storage.js"></script>
+  <script src="src/config/checklist-schema.js"></script>
+  <script src="src/core/store.js"></script>
+  <script src="src/core/stats.js"></script>
+  <script src="src/core/exporter.js"></script>
+  <script src="src/core/router.js"></script>
+  <script src="src/data/sample-data.js"></script>
+
+  <!-- components -->
+  <script src="src/components/icons.js"></script>
+  <script src="src/components/toast.js"></script>
+  <script src="src/components/modal.js"></script>
+  <script src="src/components/charts.js"></script>
+  <script src="src/components/ui.js"></script>
+  <script src="src/components/form.js"></script>
+  <script src="src/components/layout.js"></script>
+
+  <!-- pages -->
+  <script src="src/pages/dashboard.js"></script>
+  <script src="src/pages/checklist-form.js"></script>
+  <script src="src/pages/trades.js"></script>
+  <script src="src/pages/trade-detail.js"></script>
+  <script src="src/pages/accounts.js"></script>
+  <script src="src/pages/reports.js"></script>
+  <script src="src/pages/settings.js"></script>
+  <script src="src/pages/not-found.js"></script>
+
+  <!-- bootstrap -->
+  <script src="src/app.js"></script>
+</body>
+</html>
